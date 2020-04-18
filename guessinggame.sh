@@ -7,17 +7,17 @@ let file_number=$(ls -a "$(pwd)" | wc -l)-2
 var=-1
 
 function classic_old_games {
-	while [[ $var -ne $file_number ]]
+	while [[ $(bc <<< "$var != $file_number") = 1 ]]
 	do
 		
 		echo "how many files are in the current directory, guess them"
 		read var
 		if [[ $var =~ ^[0-9]+$ ]]
 		then
-			if [[ $var -gt $file_number ]]
+			if [[ $(bc <<< "$var > $file_number") = 1 ]]
 			then
 				echo " too high "
-			elif [[ $var -lt $file_number ]]
+			elif [[ $(bc <<< "$var < $file_number") = 1 ]]
 			then
 				echo " too low "
 			else
