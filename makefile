@@ -1,6 +1,6 @@
 all: README.md
 
 README.md: guessinggame.sh
-	echo "##ubuntu project">README.md
-	date >> README.md
-	wc -l guessinggame.sh>> README.md
+	echo "## ubuntu project file">README.md
+	echo "Make is created at "$$(date) >> README.md
+	echo "lines are " $$(wc -l guessinggame.sh| egrep -o "[0-9]*")>> README.md
