@@ -12,14 +12,19 @@ function classic_old_games {
 		
 		echo "how many files are in the current directory, guess them"
 		read var
-		if [[ $var -gt $file_number ]]
+		if [[ $var =~ ^[0-9]+$ ]]
 		then
-			echo " too high "
-		elif [[ $var -lt $file_number ]]
-		then
-			echo " too low "
+			if [[ $var -gt $file_number ]]
+			then
+				echo " too high "
+			elif [[ $var -lt $file_number ]]
+			then
+				echo " too low "
+			else
+				echo "Congratulations your guess is correct"
+			fi
 		else
-			echo "Congratulations your guess is correct"
+			echo "incorrect parameter"
 		fi
 		echo ""
 		
