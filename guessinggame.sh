@@ -3,7 +3,7 @@
 # Author: VikalpRusia
 # Date: 18-April-2020
 
-file_number=$(ls $pwd | wc -l)
+file_number=$(ls -a $pwd | wc -l)
 var=0
 
 function classic_old_games {
