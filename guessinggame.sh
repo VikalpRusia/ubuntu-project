@@ -7,7 +7,7 @@ let file_number=$(ls -a "$(pwd)" | wc -l)-2
 var=-1
 
 function classic_old_games {
-	while [[ $var != $file_number ]]
+	while [[ $var -ne $file_number ]]
 	do
 		
 		echo "how many files are in the current directory, guess them"
