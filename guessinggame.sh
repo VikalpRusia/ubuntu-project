@@ -3,8 +3,8 @@
 # Author: VikalpRusia
 # Date: 18-April-2020
 
-let file_number=$(ls -a $(pwd) | wc -l)-2
-var=0
+let file_number=$(ls -a "$(pwd)" | wc -l)-2
+var=-1
 
 function classic_old_games {
 	while [[ $var != $file_number ]]
